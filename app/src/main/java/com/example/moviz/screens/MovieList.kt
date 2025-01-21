@@ -9,7 +9,7 @@ import com.example.moviz.retrofit.Movie
 fun MovieList(movies: List<Movie>){
 
     LazyColumn {
-        items(movies){
+        items(movies, key = {movie -> movie.id}){
                 movie -> MovieItem(movie)
         }
     }

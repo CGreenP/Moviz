@@ -5,9 +5,6 @@ import com.example.moviz.viewmodel.MovieViewModel
 
 @Composable
 fun MovieScreen(viewModel: MovieViewModel){
-    val moviesList = viewModel.movies
+    val moviesList = viewModel.popularMovies
     MovieList(movies = moviesList)
-
-
-
 }
