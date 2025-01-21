@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.moviz.repository.Repository
 import com.example.moviz.screens.MovieScreen
 import com.example.moviz.ui.theme.MovizTheme
+import com.example.moviz.ui.theme.utils.MovizTopAppBar
 import com.example.moviz.viewmodel.MovieViewModel
 import com.example.moviz.viewmodel.MovieViewModelFactory
 
