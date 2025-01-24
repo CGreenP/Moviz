@@ -8,8 +8,8 @@ import com.example.moviz.room.MoviesDB
 class Repository(context: Context) {
 
     // Fetching data from Online API
-    suspend fun getPopularMoviesFromOnlineApi(apiKey: String): List<Movie> {
-        return RetrofitInstance.api.getPopularMovies(apiKey).results
+    suspend fun getPopularMoviesFromOnlineApi(apiKey: String, page: Int): List<Movie> {
+        return RetrofitInstance.api.getPopularMovies(apiKey, page).results
     }
 
     //Fetching data from Offline ROOM database
