@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
                 Scaffold(
                     modifier = Modifier.fillMaxSize().nestedScroll(scrollBehavior.nestedScrollConnection),
-                    topBar = {MovizTopAppBar(scrollBehavior = scrollBehavior, title = "Moviz", subtitle = "Popular Movies")}
+                    topBar = {MovizTopAppBar(scrollBehavior = scrollBehavior, title = "Moviz", subtitle = "Top 20 Popular Movies")}
                 ) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
                         MovieScreen(viewModel = movieViewModel)
