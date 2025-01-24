@@ -68,6 +68,11 @@ dependencies {
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
+    // Paging
+    implementation(libs.androidx.paging.runtime)
+    // optional - Jetpack Compose integration
+    implementation(libs.androidx.paging.compose)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
