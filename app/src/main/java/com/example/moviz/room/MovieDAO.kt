@@ -16,4 +16,7 @@ interface MovieDAO {
 
     @Query("SELECT * FROM popular_movies_table")
     suspend fun getAllPopularMoviesInDB(): List<Movie>
+
+    @Query("DELETE FROM popular_movies_table")
+    suspend fun clearAll()
 }
