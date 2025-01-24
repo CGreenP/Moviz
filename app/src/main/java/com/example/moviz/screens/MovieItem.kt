@@ -48,7 +48,7 @@ fun MovieItem(movie: Movie) {
                     .build(), contentDescription = "Movie Image", loading = {
                     Box(
                         modifier = Modifier
-                            .size(width = pxToDp(500).dp, height = pxToDp(700).dp)
+                            .size(width = pxToDp(500).dp, height = pxToDp(750).dp)
                             .shimmerEffect()
                             .clip(RoundedCornerShape(16.dp))
                     )
