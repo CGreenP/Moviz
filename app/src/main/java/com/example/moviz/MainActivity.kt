@@ -38,11 +38,18 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MovizTheme {
-                val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-                Scaffold(
-                    modifier = Modifier.fillMaxSize().nestedScroll(scrollBehavior.nestedScrollConnection),
-                    topBar = {MovizTopAppBar(scrollBehavior = scrollBehavior, title = "Moviz", subtitle = "Top 20 Popular Movies")}
-                ) { innerPadding ->
+                val scrollBehavior =
+                    TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+                Scaffold(modifier = Modifier
+                    .fillMaxSize()
+                    .nestedScroll(scrollBehavior.nestedScrollConnection),
+                    topBar = {
+                        MovizTopAppBar(
+                            scrollBehavior = scrollBehavior,
+                            title = "Moviz",
+                            subtitle = "Top 20 Popular Movies Right Now"
+                        )
+                    }) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
                         MovieScreen(viewModel = movieViewModel)
                     }
