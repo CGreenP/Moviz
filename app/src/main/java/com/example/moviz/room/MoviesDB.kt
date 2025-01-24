@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.moviz.retrofit.Movie
 
-@Database(entities = [Movie::class], version = 1)
+@Database(entities = [Movie::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class MoviesDB : RoomDatabase() {
 
