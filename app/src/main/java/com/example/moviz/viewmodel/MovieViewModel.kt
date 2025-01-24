@@ -45,7 +45,8 @@ class MovieViewModel(repository: Repository) : ViewModel() {
 
                 repository.insertMoviesListToDB(moviesFromAPI)
 
-                movies = moviesFromAPI
+                moviesFromRoomDB = repository.getPopularMoviesFromDB()
+                movies = moviesFromRoomDB
 
                 popularMovies = movies.sortedByDescending { it.popularity }
                 _isLoading.value = false
