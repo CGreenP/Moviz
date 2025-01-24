@@ -62,12 +62,12 @@ fun MovieItem(movie: Movie) {
                 Text(text = movie.title, style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Release Date: ${formatDate( movie.releaseDate)}",
+                    text = "Release Date: ${formatDate(movie.releaseDate)}",
                     style = MaterialTheme.typography.bodySmall
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "User Score: ${"%.2f".format(movie.voteAverage * 10)}/100",
+                    text = "User Score: ${"%.2f".format(movie.voteAverage.times(10))}/100",
                     style = MaterialTheme.typography.bodySmall
                 )
                 Spacer(modifier = Modifier.height(8.dp))
