@@ -41,7 +41,7 @@ class MovieViewModel(repository: Repository) : ViewModel() {
             try {
                 _isLoading.value = true
                 val apiKey = BuildConfig.API_KEY
-                moviesFromAPI = repository.getPopularMoviesFromOnlineApi(apiKey)
+                moviesFromAPI = repository.getPopularMoviesFromOnlineApi(apiKey,1)
 
                 repository.insertMoviesListToDB(moviesFromAPI)
 
