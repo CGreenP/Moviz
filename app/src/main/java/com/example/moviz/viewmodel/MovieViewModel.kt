@@ -19,10 +19,10 @@ class MovieViewModel(repository: Repository) : ViewModel() {
 
     private val _isLoading = MutableStateFlow(false)
     val isLoading = _isLoading.onStart {
-            loadData(repository = repository)
-        }.stateIn(
-            viewModelScope, SharingStarted.WhileSubscribed(5000L), false
-        )
+        loadData(repository = repository)
+    }.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5000L), false
+    )
 
     var movies by mutableStateOf<List<Movie>>(emptyList())
         private set
@@ -41,7 +41,7 @@ class MovieViewModel(repository: Repository) : ViewModel() {
             try {
                 _isLoading.value = true
                 val apiKey = BuildConfig.API_KEY
-                moviesFromAPI = repository.getPopularMoviesFromOnlineApi(apiKey,1)
+                moviesFromAPI = repository.getPopularMoviesFromOnlineApi(apiKey, 1)
 
                 repository.insertMoviesListToDB(moviesFromAPI)
 
