@@ -24,6 +24,10 @@ class MovieViewModel(repository: Repository) : ViewModel() {
         viewModelScope, SharingStarted.WhileSubscribed(5000L), false
     )
 
+    private val _error = MutableStateFlow(false)
+    val error = _error.onStart {
+    }.stateIn(viewModelScope,SharingStarted.WhileSubscribed(5000L),false)
+
     var movies by mutableStateOf<List<Movie>>(emptyList())
         private set
 
@@ -53,6 +57,7 @@ class MovieViewModel(repository: Repository) : ViewModel() {
 
             } catch (e: Exception) {
                 _isLoading.value = true
+                _error.value = true
                 Log.d("TAG", "MovieViewModel: ${e.message}")
                 moviesFromRoomDB = repository.getPopularMoviesFromDB()
                 movies = moviesFromRoomDB
