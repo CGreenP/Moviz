@@ -5,6 +5,15 @@ import com.example.moviz.retrofit.Movie
 import com.example.moviz.retrofit.RetrofitInstance
 import com.example.moviz.room.MoviesDB
 
+/**
+ * Repository class responsible for managing data from both online (API) and offline (Room Database) sources.
+ *
+ * This class acts as a single source of truth for movie data, abstracting the data access logic
+ * from the rest of the application. It handles fetching movie lists from the online API and
+ * managing movie data within the Room database.
+ *
+ * @property context The application context, used for database initialization.
+ */
 class Repository(context: Context) {
 
     // Fetching data from Online API

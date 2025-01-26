@@ -15,6 +15,13 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+/**
+ * The [MovieViewModel] class is a ViewModel that manages movie data for the application.
+ * It interacts with a [Repository] to fetch movie data from both online API and a local Room database.
+ * It exposes various states and data lists to the UI, including loading status, error status, and different movie collections.
+ *
+ * @property repository The repository to interact with data sources.
+ */
 class MovieViewModel(repository: Repository) : ViewModel() {
 
     private val _isLoading = MutableStateFlow(false)

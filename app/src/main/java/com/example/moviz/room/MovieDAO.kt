@@ -6,6 +6,10 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.moviz.retrofit.Movie
 
+/**
+ * Data Access Object (DAO) interface for interacting with the local movie database.
+ * This interface defines methods for inserting, retrieving, and deleting movie data.
+ */
 @Dao
 interface MovieDAO {
     @Insert

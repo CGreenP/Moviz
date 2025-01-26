@@ -50,6 +50,11 @@ import com.example.moviz.ui.theme.utils.formatDate
 import com.example.moviz.ui.theme.utils.pxToDp
 import com.example.moviz.ui.theme.utils.shimmerEffect
 
+/**
+ * A composable function that displays a movie item.
+ *
+ * @param movie The movie data to display.
+ */
 @Composable
 fun MovieItem(movie: Movie) {
     Card(
@@ -71,10 +76,12 @@ fun MovieItem(movie: Movie) {
         )
     ) {
 
+        // State variables to control the visibility of the "Show More" and "Show Less" buttons
         var showMoreButton by remember { mutableStateOf(true) }
         var showLessButton by remember { mutableStateOf(false) }
         var hasVisualOverflow by remember { mutableStateOf(false) }
 
+        // Infinite transition for the background gradient animation
         val infiniteTransition = rememberInfiniteTransition(label = "background")
         val targetOffset = with(LocalDensity.current) {
             1000.dp.toPx()
@@ -172,7 +179,6 @@ fun MovieItem(movie: Movie) {
                             showLessButton = false
                         })
                 }
-
             }
         }
     }
