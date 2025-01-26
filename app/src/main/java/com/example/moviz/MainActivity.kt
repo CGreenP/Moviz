@@ -22,6 +22,16 @@ import com.example.moviz.viewmodel.MovieViewModel
 import com.example.moviz.viewmodel.MovieViewModelFactory
 
 
+/**
+ * The main activity of the Moviz application.
+ *
+ * This activity is the entry point of the app and is responsible for:
+ * - Setting up the UI using Jetpack Compose.
+ * - Enabling edge-to-edge display.
+ * - Creating and providing the [MovieViewModel] to the UI.
+ * - Setting up the main UI layout with a [Scaffold] and a [MovizTopAppBar].
+ * - Displaying the [MovieScreen] to show the list of movies.
+ */
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
